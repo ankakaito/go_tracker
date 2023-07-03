@@ -1,0 +1,12 @@
+[Unit]
+Description=Golang Tracker
+ConditionPathExists=/home/docker/tracker/app
+After=network.target
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=10
+User=docker
+WorkingDirectory=/home/docker/tracker
+ExecStart=/home/docker/tracker/app
