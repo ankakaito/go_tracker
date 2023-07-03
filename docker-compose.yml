@@ -9,7 +9,7 @@ services:
             - POSTGRES_PASSWORD=go_user
             - POSTGRES_DB=postgres
         volumes:
-            - /home/docker/tracker/Conf/postgresql.conf:/etc/postgresql/postgresql.conf
+            - /home/docker/go_tracker/Conf/postgresql.conf:/etc/postgresql/postgresql.conf
             - go_tracker-data-db:/var/lib/postgresql/data
         container_name: postgresql_go_tracker
         restart: always
