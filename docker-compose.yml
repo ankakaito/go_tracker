@@ -1,0 +1,22 @@
+version: '3'
+services:
+    db:
+        image: "postgres:14"
+        ports:
+            - "28085:5432"
+        environment:
+            - POSTGRES_USER=go_user
+            - POSTGRES_PASSWORD=go_user
+            - POSTGRES_DB=postgres
+        volumes:
+            - /home/docker/tracker/Conf/postgresql.conf:/etc/postgresql/postgresql.conf
+            - go_tracker-data-db:/var/lib/postgresql/data
+        container_name: postgresql_go_tracker
+        restart: always
+        networks:
+            - go_tracker-network
+
+volumes:
+    go_tracker-data-db:
+networks:
+    go_tracker-network:
